@@ -111,7 +111,15 @@ namespace task4.Controllers
                 com.Parameters.AddWithValue("sName", "John");
 
                     var dr = com.ExecuteReader();
-                    //...
+                     if (dr.Read())
+                {
+                    var student = new Student();
+
+                    student.Id = dr["Id"].ToString();
+                    student.sName = dr["sName"].ToString();
+                 
+                    return Ok(student);
+                }
                 }
 
                 return Ok();

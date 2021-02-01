@@ -146,6 +146,8 @@ namespace task4.Controllers
                         tran.Commit();
                     }
                     catch (Exception exc)
+
+
                     {
                         tran.Rollback();
                     }
